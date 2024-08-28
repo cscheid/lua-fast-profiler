@@ -74,7 +74,7 @@ static void lstop (lua_State *L, lua_Debug *ar) {
 ** interpreter.
 */
 static void laction (int i) {
-  int flag = LUA_MASKCALL | LUA_MASKRET | LUA_MASKLINE | LUA_MASKCOUNT;
+  int flag = LUA_MASKCALL | LUA_MASKRET | LUA_MASKLINE | LUA_MASKCOUNT | LUA_MASKTIME;
   setsignal(i, SIG_DFL); /* if another SIGINT happens, terminate process */
   lua_sethook(globalL, lstop, flag, 1);
 }
