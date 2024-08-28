@@ -7,6 +7,9 @@
 #ifndef lstate_h
 #define lstate_h
 
+#include <sys/time.h>
+#include <signal.h>
+
 #include "lua.h"
 
 
@@ -350,6 +353,7 @@ struct lua_State {
     int ftransfer;  /* offset of first value transferred */
     int ntransfer;  /* number of values transferred */
   } transferinfo;
+  struct sigaction s_action;
 };
 
 
